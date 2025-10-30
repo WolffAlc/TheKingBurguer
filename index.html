@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TKBurguer Cardápio</title>
+    <style>
+         body {
+            background-image: url(img/1085778.jpg);
+            background-size: cover;
+            width: 100vw;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .menu-section {
+            margin-top: 20px;
+            width: 80%;
+        }
+        .menu-category {
+            margin-bottom: 20px;
+        }
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        .menu-item label {
+            flex-grow: 1;
+        }
+        .cart {
+            margin-top: 20px;
+            width: 80%;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        .total {
+            font-weight: bold;
+            padding: 10px;
+            text-align: right;
+        }
+        .checkout {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            width: 80%;
+        }
+        
+        #checkout-form {
+            padding: 25px;
+            margin-bottom: 30px;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Melhorar contraste */
+            border-radius: 8px; /* Adicionar bordas arredondadas */
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input,
+        .form-group select {
+            padding: 8px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #fff;
+            color: #000;
+        }
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+        }
+        .form-row .form-group {
+            flex: 1;
+            margin-right: 10px;
+        }
+        .form-row .form-group:last-child {
+            margin-right: 0;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 4px;
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>The King Burguer</h1>
+    <p>Cardápio</p>
+
+    <div class="menu-section">
+        <h2>Hambúrgueres</h2>
+        <div class="menu-category">
+            <div class="menu-item">
+                <label>
+                    <input type="checkbox" class="menu-checkbox" data-name="Hambúrguer Clássico" data-price="20.00">
+                    KingClássico - R$ 20,00
+                </label>
+                <input type="number" min="1" value="1" class="menu-quantity" disabled>
+            </div>
+            <div class="menu-item">
+                <label>
+                    <input type="checkbox" class="menu-checkbox" data-name="Cheeseburger" data-price="25.00">
+                    kingCheese - R$ 25,00
+                </label>
+                <input type="number" min="1" value="1" class="menu-quantity" disabled>
+            </div>
+            <div class="menu-item">
+                <label>
+                    <input type="checkbox" class="menu-checkbox" data-name="Cheeseburger" data-price="25.00">
+                    kingSalada - R$ 18,00
+                </label>
+                <input type="number" min="1" value="1" class="menu-quantity" disabled>
+            </div>
+            <div class="menu-item">
+                <label>
+                    <input type="checkbox" class="menu-checkbox" data-name="Cheeseburger" data-price="25.00">
+                    kingBacon - R$ 29,00
+                </label>
+                <input type="number" min="1" value="1" class="menu-quantity" disabled>
+            </div>
+            <div class="menu-item">
+                <label>
+                    <input type="checkbox" class="menu-checkbox" data-name="Cheeseburger" data-price="25.00">
+                    kingBaconDuplo - R$ 32,00
+                </label>
+                <input type="number" min="1" value="1" class="menu-quantity" disabled>
+            </div>
+        </div>
+
+        <h2>Salgados</h2>
+        <div class="menu-category">
+            <div class="menu-item">
+                <label>
+                    <input type="checkbox" class="menu-checkbox" data-name="Coxinha" data-price="5.00">
+                    Coxinha - R$ 5,00
+                </label>
+                <input type="number" min="1" value="1" class="menu-quantity" disabled>
+            </div>
+            <div class="menu-item">
+                <label>
+                    <input type="checkbox" class="menu-checkbox" data-name="Kibe" data-price="6.00">
+                    Kibe - R$ 6,00
+                </label>
+                <input type="number" min="1" value="1" class="menu-quantity" disabled>
+            </div>
+            <div class="menu-item">
+                <label>
+                    <input type="checkbox" class="menu-checkbox" data-name="Kibe" data-price="6.00">
+                    Pastel - R$ 8,00
+                </label>
+                <input type="number" min="1" value="1" class="menu-quantity" disabled>
+            </div>
+            <div class="menu-item">
+                <label>
+                    <input type="checkbox" class="menu-checkbox" data-name="Kibe" data-price="6.00">
+                    Enroladinho - R$ 4,00
+                </label>
+                <input type="number" min="1" value="1" class="menu-quantity" disabled>
+            </div>
+            <div class="menu-item">
+                <label>
+                    <input type="checkbox" class="menu-checkbox" data-name="Kibe" data-price="6.00">
+                    Batata Frita - R$ 11,00
+                </label>
+                <input type="number" min="1" value="1" class="menu-quantity" disabled>
+            </div>
+            <div class="menu-item">
+                <label>
+                    <input type="checkbox" class="menu-checkbox" data-name="Kibe" data-price="6.00">
+                   Batata Frita com Bacon - R$ 16,00
+                </label>
+                <input type="number" min="1" value="1" class="menu-quantity" disabled>
+            </div>
+        </div>
+
+        <h2>Bebidas</h2>
+        <div class="menu-category">
+            <div class="menu-item">
+                <label>
+                    <input type="checkbox" class="menu-checkbox" data-name="Refrigerante" data-price="7.00">
+                    Coca lata - R$ 7,00
+                </label>
+                <input type="number" min="1" value="1" class="menu-quantity" disabled>
+            </div>
+            <div class="menu-item">
+                <label>
+                    <input type="checkbox" class="menu-checkbox" data-name="Refrigerante" data-price="7.00">
+                    Coca lata zero - R$ 7,50
+                </label>
+                <input type="number" min="1" value="1" class="menu-quantity" disabled>
+            </div>
+            <div class="menu-item">
+                <label>
+                    <input type="checkbox" class="menu-checkbox" data-name="Refrigerante" data-price="7.00">
+                    Fanta lata - R$ 6,50
+                </label>
+                <input type="number" min="1" value="1" class="menu-quantity" disabled>
+            </div>
+            <div class="menu-item">
+                <label>
+                    <input type="checkbox" class="menu-checkbox" data-name="Suco" data-price="8.00">
+                    Suco de Laranja - R$ 8,00
+                </label>
+                <input type="number" min="1" value="1" class="menu-quantity" disabled>
+            </div>
+            <div class="menu-item">
+                <label>
+                    <input type="checkbox" class="menu-checkbox" data-name="Suco" data-price="8.00">
+                    Suco de Uva - R$ 8,00
+                </label>
+                <input type="number" min="1" value="1" class="menu-quantity" disabled>
+            </div>
+            <div class="menu-item">
+                <label>
+                    <input type="checkbox" class="menu-checkbox" data-name="Suco" data-price="8.00">
+                    Suco de Acerola - R$ 8,00
+                </label>
+                <input type="number" min="1" value="1" class="menu-quantity" disabled>
+            </div>
+        </div>
+    </div>
+
+    <div class="cart">
+        <h2>Carrinho de Compras</h2>
+        <div id="cart-items"></div>
+        <div class="total">Total: R$ <span id="total-amount">0.00</span></div>
+    </div>
+
+    <div class="checkout">
+        <h2>Finalizar Pedido</h2>
+        <form id="checkout-form">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="customer-name">Nome Completo:</label>
+                    <input type="text" id="customer-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="customer-address">Endereço:</label>
+                    <input type="text" id="customer-address" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="payment-method">Método de Pagamento:</label>
+                <select id="payment-method" required>
+                    <option value="debito">Cartão de Débito</option>
+                    <option value="credito">Cartão de Crédito</option>
+                    <option value="pix">Pix</option>
+                </select>
+            </div>
+            <div id="order-summary"></div>
+            <button type="submit">Confirmar Pedido</button>
+            <button type="button" id="cancel-order">Cancelar Pedido</button>
+        </form>
+    </div>
+
+    <script>
+        document.querySelectorAll('.menu-checkbox').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const quantityInput = this.closest('.menu-item').querySelector('.menu-quantity');
+                quantityInput.disabled = !this.checked;
+            });
+        });
+
+        document.querySelectorAll('.menu-checkbox').forEach(checkbox => {
+            checkbox.addEventListener('change', updateCart);
+        });
+
+        document.querySelectorAll('.menu-quantity').forEach(quantity => {
+            quantity.addEventListener('change', updateCart);
+        });
+
+        function updateCart() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            cartItemsContainer.innerHTML = '';
+            let totalAmount = 0;
+            document.querySelectorAll('.menu-checkbox:checked').forEach(checkbox => {
+                const menuItem = checkbox.closest('.menu-item');
+                const itemName = checkbox.getAttribute('data-name');
+                const itemPrice = parseFloat(checkbox.getAttribute('data-price'));
+                const itemQuantity = parseInt(menuItem.querySelector('.menu-quantity').value);
+                const itemTotal = itemPrice * itemQuantity;
+                totalAmount += itemTotal;
+
+                const cartItem = document.createElement('div');
+                cartItem.classList.add('cart-item');
+                cartItem.textContent = `${itemName} - R$ ${itemPrice.toFixed(2)} x ${itemQuantity} = R$ ${itemTotal.toFixed(2)}`;
+                cartItemsContainer.appendChild(cartItem);
+            });
+            document.getElementById('total-amount').textContent = totalAmount.toFixed(2);
+        }
+
+        document.getElementById('checkout-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const customerName = document.getElementById('customer-name').value;
+            const customerAddress = document.getElementById('customer-address').value;
+            const paymentMethod = document.getElementById('payment-method').value;
+            const totalAmount = document.getElementById('total-amount').textContent;
+
+            const orderSummary = `
+                Nome: ${customerName}
+                Endereço: ${customerAddress}
+                Método de Pagamento: ${paymentMethod}
+                Total: R$ ${totalAmount}
+            `;
+            document.getElementById('order-summary').textContent = orderSummary;
+            alert('Pedido confirmado! Obrigado pela sua compra.');
+        });
+
+        document.getElementById('cancel-order').addEventListener('click', function() {
+            if (confirm('Tem certeza que deseja cancelar o pedido?')) {
+                location.reload();
+            }
+        });
+    </script>
+</body>
+</html>
+
